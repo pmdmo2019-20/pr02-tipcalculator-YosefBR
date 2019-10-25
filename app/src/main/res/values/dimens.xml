@@ -2,4 +2,6 @@
 <resources>
     <dimen name="main_margin">8dp</dimen>
     <dimen name="main_inter_margin">2dp</dimen>
+    <dimen name="layoutPadding">20dp</dimen>
+    <dimen name="offset">10dp</dimen>
 </resources>

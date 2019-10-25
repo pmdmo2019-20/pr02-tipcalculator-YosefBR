@@ -1,7 +1,276 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO Using ConstraintLayout
-     android:textAppearance="?android:attr/textAppearanceSmall" for TextViews
-     style="@style/Base.TextAppearance.AppCompat.Headline" for EditTexts
-     style="@style/Widget.AppCompat.Button.Borderless" for Buttons
--->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layoutPadding">
 
+    <TextView
+        android:id="@+id/billLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bill"
+        android:textAlignment="viewEnd"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintBottom_toTopOf="@+id/txtBill"
+        app:layout_constraintEnd_toEndOf="@+id/txtBill"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/eur1"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset"
+        android:text="@string/euro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billLbl"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtBill"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/startingText"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/eur1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tipPer"
+        app:layout_constraintEnd_toEndOf="@+id/txtPercentage"
+        app:layout_constraintTop_toBottomOf="@+id/txtBill"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tip"
+        app:layout_constraintEnd_toEndOf="@+id/txtTip"
+        app:layout_constraintTop_toBottomOf="@+id/txtBill"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/percentage"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset"
+        android:inputType="numberDecimal"
+        android:text="@string/percentage"
+        app:layout_constraintEnd_toStartOf="@+id/txtTip"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtPercentage"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|number"
+        android:selectAllOnFocus="true"
+        android:text="@string/tipText"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/percentage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/eur2"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset"
+        android:text="@string/euro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/eur3"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset"
+        android:text="@string/euro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalLbl"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/eur4"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset"
+        android:text="@string/euro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/perDinerLbl"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/eur5"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset"
+        android:text="@string/euro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rounded"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtTip"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:inputType="numberDecimal|number"
+        android:text="@string/startingText"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/eur2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/totalLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/total"
+        android:textAlignment="viewEnd"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toEndOf="@+id/txtTotal"
+        app:layout_constraintTop_toBottomOf="@+id/txtTip"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtTotal"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:text="@string/startingText"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/eur3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalLbl"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnResetTip"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotal"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/dinersLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/diners"
+        android:textAlignment="viewEnd"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toStartOf="@+id/txtPerDiner"
+        app:layout_constraintTop_toBottomOf="@+id/btnResetTip"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/perDinerLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/perDiner"
+        android:textAlignment="viewEnd"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toEndOf="@+id/txtPerDiner"
+        app:layout_constraintTop_toBottomOf="@+id/btnResetTip"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtDiners"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|number"
+        android:selectAllOnFocus="true"
+        android:text="@string/oneDiner"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/txtPerDiner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dinersLbl"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtPerDiner"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:text="@string/startingText"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/eur3"
+        app:layout_constraintTop_toBottomOf="@+id/perDinerLbl"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/rounded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/rounded"
+        app:layout_constraintEnd_toEndOf="@+id/txtPerDinerRounded"
+        app:layout_constraintTop_toBottomOf="@+id/txtPerDiner"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtPerDinerRounded"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:text="@string/startingText"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/eur4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rounded"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnResetDiners"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPerDinerRounded"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
