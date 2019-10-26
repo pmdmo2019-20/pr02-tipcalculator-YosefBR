@@ -75,7 +75,7 @@ class TipCalculatorTest {
 
         val actual = tip.calculatePerDinerRounded()
 
-        assertEquals(110f, actual)
+        assertEquals(55f, actual)
     }
 
     @DisplayName("Should calculate perDinerRounded properly when perDinerRounded has 00 as cents")
@@ -85,7 +85,7 @@ class TipCalculatorTest {
 
         val actual = tip.calculatePerDinerRounded()
 
-        assertEquals(110f, actual)
+        assertEquals(55f, actual)
     }
 
 }

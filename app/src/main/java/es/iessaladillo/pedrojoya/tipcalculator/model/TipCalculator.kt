@@ -30,7 +30,7 @@ class TipCalculator(val bill:Float, val tip:Float, val diners:Float) {
     }
 
     fun calculatePerDinerRounded(): Float {
-        return calculatePerDiner()*diners
+        return Math.ceil(calculatePerDiner().toDouble()).toFloat()
     }
 
 }
